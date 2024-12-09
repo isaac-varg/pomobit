@@ -4,12 +4,17 @@
 import React, { useEffect, useState } from 'react';
 import dayjs from 'dayjs';
 import duration from 'dayjs/plugin/duration';
+import Display from './Display';
 
 dayjs.extend(duration);
 
-const Timer = () => {
+interface TimerProps {
+}
+
+const TimeKeeper = ({ }: TimerProps) => {
 
     const [timeLeft, setTimeLeft] = useState(dayjs.duration({ minutes: 5 }));
+
 
 
 
@@ -29,10 +34,11 @@ const Timer = () => {
 
     return (
         <div>
-            {`${timeLeft.minutes()}:${timeLeft.seconds().toString().padStart(2, '0')}`}
+            
+            <Display timeLeft={timeLeft} />
         </div>
 
     )
 }
 
-export default Timer
+export default TimeKeeper

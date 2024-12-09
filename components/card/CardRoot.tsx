@@ -6,7 +6,7 @@ interface CardRootProps {
 
 const CardRoot = ({ children }: CardRootProps) => {
     return (
-        <div className="card bg-base-200 w-96 shadow-xl">
+        <div className="relative card bg-base-200 w-96 shadow-xl">
             <div className="card-body">
                 {children}
             </div>
